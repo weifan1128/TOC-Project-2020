@@ -8,6 +8,6 @@
 
 ## Demo
 ###QRcode
-![](https://imgur.com/gallery/uMp4no6)
+![](./QRcode.png)
 ###演示
-![](https://imgur.com/gallery/H7PR18U)
+![](./demo.jpg)
