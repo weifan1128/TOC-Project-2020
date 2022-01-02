@@ -9,17 +9,25 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state1(self, event):
         text = event.message.text
-        return text.lower() == "go to state1"
+        return text.lower() == "計算理論期末考"
 
     def is_going_to_state2(self, event):
         text = event.message.text
-        return text.lower() == "go to state2"
+        return text.lower() == "營期"
+
+    def is_going_to_state3(self, event):
+        text = event.message.text
+        return text.lower() == "寒假"
+
+    def is_going_to_list(self, event):
+        text = event.message.text
+        return text.lower() == "list"
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state1")
+        send_text_message(reply_token, "2022/01/12")
         self.go_back()
 
     def on_exit_state1(self):
@@ -29,8 +37,28 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state2")
+        send_text_message(reply_token, "2022/01/15-2022/01/28")
         self.go_back()
 
     def on_exit_state2(self):
         print("Leaving state2")
+
+    def on_enter_state3(self, event):
+        print("I'm entering state3")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "2022/01/14")
+        self.go_back()
+
+    def on_exit_state3(self):
+        print("Leaving state3")
+
+    def on_enter_list(self, event):
+        print("I'm entering list")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "寒假/計算理論期末考/營期")
+        self.go_back()
+
+    def on_exit_list(self):
+        print("Leaving list")
