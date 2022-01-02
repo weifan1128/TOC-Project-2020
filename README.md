@@ -7,7 +7,11 @@
 ![fsm](./img/show-fsm.png)
 
 ## Demo
+
 ###QRcode
+
 ![](./QRcode.png)
+
 ###演示
+
 ![](./demo.jpg)
